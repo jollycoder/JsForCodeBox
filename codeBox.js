@@ -30,45 +30,26 @@ else {
     var padding = +computedStyle.paddingLeft.slice(0, -2) + +computedStyle.paddingRight.slice(0, -2);
     var border = +computedStyle.borderWidth.slice(0, -2) * 2;
 
-    addStylesheetRules([
-        ['.entry-content pre',
-            ['position', 'absolute'],
-            ['top', offsetTop + 'px'],
-            ['maxHeight', 'none'],
-            ['height', 'calc(100% - ' + (offsetTop + 7) + 'px)'],
-            ['paddingRight', '0'],
-            ['width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px']]
-    ]);
+    setStyle('.entry-content pre', 'position', 'absolute');
+    setStyle('.entry-content pre', 'top', offsetTop + 'px');
+    setStyle('.entry-content pre', 'maxHeight', 'none');
+    setStyle('.entry-content pre', 'height', 'calc(100% - ' + (offsetTop + 7) + 'px)');
+    setStyle('.entry-content pre', 'paddingRight', '0');
+    setStyle('.entry-content pre', 'width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px');
+}
+
+function setStyle(selector, style, value)  {
+    if (document.styleSheets[0].cssRules)
+        var rules = document.styleSheets[0].cssRules;
+    else if (document.styleSheets[0].rules)
+        rules = document.styleSheets[0].rules;
+
+    for (var i in rules)  {
+        if (rules[i].selectorText == selector)
+            rules[i].style[style] = value;
+    }
 }
 
 function getStyle(elem) {
     return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
-}
-
-function addStylesheetRules (rules) {
-    var styleEl = document.createElement('style'),
-        styleSheet;
-
-    // Append style element to head
-    document.head.appendChild(styleEl);
-
-    // Grab style sheet
-    styleSheet = styleEl.sheet;
-
-    for (var i = 0, rl = rules.length; i < rl; i++) {
-        var j = 1, rule = rules[i], selector = rules[i][0], propStr = '';
-        // If the second argument of a rule is an array of arrays, correct our variables.
-        if (Object.prototype.toString.call(rule[1][0]) === '[object Array]') {
-            rule = rule[1];
-            j = 0;
-        }
-
-        for (var pl = rule.length; j < pl; j++) {
-            var prop = rule[j];
-            propStr += prop[0] + ':' + prop[1] + (prop[2] ? ' !important' : '') + ';\n';
-        }
-
-        // Insert CSS Rule
-        styleSheet.insertRule(selector + '{' + propStr + '}', styleSheet.cssRules.length);
-    }
 }
