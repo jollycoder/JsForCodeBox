@@ -1,7 +1,7 @@
 "use strict";
 
 var codeBoxes = document.getElementsByClassName('codebox');
-
+alert(navigator.userAgent + '\n' + navigator.userAgent.search(/Firefox|Chrome/i));
 if (navigator.userAgent.search(/Firefox|Chrome/i) == -1) {
     alert('not ff');
     for (var i = 0; i < codeBoxes.length; i++)
