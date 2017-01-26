@@ -2,7 +2,7 @@ var codeBoxes = document.getElementsByClassName('codebox');
 console.info(navigator.userAgent);
 alert(navigator.userAgent);
 if (navigator.userAgent.search(/Firefox|Chrome/i) == -1) {
-    setStyle('.codebox', [['border-radius', '5px']])
+    setStyle('.entry-content .codebox', [['border-radius', '5px']])
     alert(navigator.userAgent);
     for (var i = 0; i < codeBoxes.length; i++)
         codeBoxes[i].style = "border: 2px solid #acf; border-radius: 5px; background: #f8f8f8; padding: 12px 5px 5px 15px;";
