@@ -30,7 +30,7 @@ else {
     var border = +computedStyle.borderWidth.slice(0, -2) * 2;
 
     setStyle('.entry-content pre', [['position', 'absolute'],
-                                    ['top', offsetTop + 'px'],
+                            //        ['top', offsetTop + 'px'],
                                     ['maxHeight', 'none'],
                                     ['height', 'calc(100% - ' + (offsetTop + 7) + 'px)'],
                                     ['paddingRight', '0'],
