@@ -31,7 +31,7 @@ else {
 
     setStyle('.entry-content pre', [['position', 'absolute'],
                                     ['maxHeight', 'none'],
-                                    ['height', 'calc(100% - ' + offsetTop + 'px)'],
+                              //      ['height', 'calc(100% - ' + offsetTop + 'px)'],
                                     ['paddingRight', '0'],
                                     ['width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px']]);
 }
