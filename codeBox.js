@@ -1,5 +1,3 @@
-"use strict";
-
 var codeBoxes = document.getElementsByClassName('codebox');
 
 if (navigator.userAgent.search(/Firefox|Chrome/i) == -1) {
