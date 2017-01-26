@@ -1,5 +1,5 @@
 var codeBoxes = document.getElementsByClassName('codebox');
-
+alert(navigator.userAgent);
 if (navigator.userAgent.search(/Firefox|Chrome/i) == -1) {
     alert(navigator.userAgent);
     for (var i = 0; i < codeBoxes.length; i++)
