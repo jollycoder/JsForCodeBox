@@ -20,7 +20,7 @@ else {
         var boxHeight = offsetTop + codeTextHeight + 10;
         ((boxHeight - paddingBottom > 500) && (boxHeight = 500 + paddingBottom));
 
-        box.style = 'border: 2px solid #c0c0c0; border-radius: 5px; background: #f8f8f8; padding: 12px 5px 5px 15px;' +
+        box.style = 'border: 2px solid #acf; border-radius: 5px; background: #f8f8f8; padding: 12px 5px 5px 15px;' +
             'height: ' + boxHeight + 'px; position: relative; resize: vertical; overflow: hidden;';
     }
 
