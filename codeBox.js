@@ -1,4 +1,5 @@
 var codeBoxes = document.getElementsByClassName('codebox');
+console.info(navigator.userAgent);
 alert(navigator.userAgent);
 if (navigator.userAgent.search(/Firefox|Chrome/i) == -1) {
     alert(navigator.userAgent);
