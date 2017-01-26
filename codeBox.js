@@ -8,16 +8,15 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) == -1) {
 }
 else {
     for (i = 0; i < codeBoxes.length; i++) {
-        var box = codeBoxes[i];
-        var getValue;
+        var gotValue, box = codeBoxes[i];
         var pre = box.getElementsByTagName('pre')[0];
-        if (!getValue) {
+        if (!gotValue) {
             var boxPos = box.getBoundingClientRect();
             var prePos = pre.getBoundingClientRect();
             var offsetTop = prePos.top - boxPos.top;
             var computedStyle = getStyle(codeBoxes[0]);
             var paddingBottom = +computedStyle.paddingBottom.slice(0, -2);
-            getValue = true;
+            gotValue = true;
         }
         var codeTextHeight = pre.getElementsByTagName('code')[0].offsetHeight;
         var boxHeight = offsetTop + codeTextHeight + 10;
@@ -30,21 +29,22 @@ else {
     var padding = +computedStyle.paddingLeft.slice(0, -2) + +computedStyle.paddingRight.slice(0, -2);
     var border = +computedStyle.borderWidth.slice(0, -2) * 2;
 
-    setStyle('.entry-content pre', 'position', 'absolute');
-    setStyle('.entry-content pre', 'top', offsetTop + 'px');
-    setStyle('.entry-content pre', 'maxHeight', 'none');
-    setStyle('.entry-content pre', 'height', 'calc(100% - ' + (offsetTop + 7) + 'px)');
-    setStyle('.entry-content pre', 'paddingRight', '0');
-    setStyle('.entry-content pre', 'width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px');
+    setStyle('.entry-content pre', [['position', 'absolute'],
+                                    ['top', offsetTop + 'px'],
+                                    ['maxHeight', 'none'],
+                                    ['height', 'calc(100% - ' + (offsetTop + 7) + 'px)'],
+                                    ['paddingRight', '0'],
+                                    ['width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px']]);
 }
 
-function setStyle(selector, style, value)  {
+function setStyle(selector, rulesArray)  {
     var sheet = document.styleSheets[0];
     var rules = (sheet.cssRules || sheet.rules);
 
     for (var i in rules)  {
         if (rules[i].selectorText == selector)
-            rules[i].style[style] = value;
+            for (var j = 0; j < rulesArray.length; j++)
+                rules[i].style[rulesArray[j][0]] = rulesArray[j][1];
     }
 }
 
