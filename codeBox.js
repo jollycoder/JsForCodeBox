@@ -34,6 +34,7 @@ else {
                                     ['height', 'calc(100% - ' + offsetTop + 'px)'],
                                     ['paddingRight', '0'],
                                     ['width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px']]);
+    setStyle('.codebox', [['border-radius', '5px']])
 }
 
 function setStyle(selector, rulesArray)  {
