@@ -39,10 +39,8 @@ else {
 }
 
 function setStyle(selector, style, value)  {
-    if (document.styleSheets[0].cssRules)
-        var rules = document.styleSheets[0].cssRules;
-    else if (document.styleSheets[0].rules)
-        rules = document.styleSheets[0].rules;
+    var sheet = document.styleSheets[0];
+    var rules = (sheet.cssRules || sheet.rules);
 
     for (var i in rules)  {
         if (rules[i].selectorText == selector)
