@@ -22,7 +22,7 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
             gotValue = true;
         }
         var codeTextHeight = pre.getElementsByTagName('code')[0].offsetHeight;
-        var boxHeight = offsetTop + codeTextHeight + paddingBottom;
+        var boxHeight = offsetTop + codeTextHeight + 5;
         (boxHeight > 500) && (boxHeight = 500);
 
         box.style = 'height: ' + boxHeight + 'px;';
@@ -34,7 +34,7 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
     setStyle('.entry-content pre', [['position', 'absolute'],
                                     ['maxHeight', 'none'],
                                     ['top', offsetTop + 'px'],
-                                    ['bottom', paddingBottom + 'px'],
+                                    ['bottom', '5px'],
                                     ['paddingRight', '0'],
                                     ['width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px']]);
 }
