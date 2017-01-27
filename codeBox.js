@@ -33,7 +33,7 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
 
     setStyle('.entry-content pre', [['position', 'absolute'],
                                     ['maxHeight', 'none'],
-                                    ['bottom', (boxHeight - paddingBottom) + 'px'],
+                                    ['bottom', paddingBottom + 'px'],
                                     ['paddingRight', '0'],
                                     ['width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px']]);
 }
