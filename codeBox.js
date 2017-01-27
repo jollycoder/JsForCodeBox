@@ -3,7 +3,7 @@ var borderColor = '#acf';
 var borderRadius = 5;
 var backgroundColor = '#f8f8f8';
 var maxHeight = 500;
-var paddingTop = 1, paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
+var paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
 
 var codeBoxes = document.getElementsByClassName('codebox');
 
@@ -11,7 +11,7 @@ setStyle('.entry-content .quotebox, .entry-content .codebox', [['border-color', 
 setStyle('.entry-content .codebox', [['border', borderWidth + 'px solid ' + borderColor],
                                      ['border-radius', borderRadius + 'px'],
                                      ['background', backgroundColor],
-                                     ['padding', paddingTop + 'px ' + paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px'],
+                                     ['padding', '0 ' + paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px'],
                                      ['position', 'relative'],
                                      ['resize', 'vertical'],
                                      ['overflow', 'hidden']]);
