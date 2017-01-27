@@ -26,7 +26,7 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
         (boxHeight > 500) && (boxHeight = 500);
 
         box.style = 'border: 2px solid #acf; border-radius: 5px; background: #f8f8f8; padding: 12px 5px 5px 15px;' +
-            'height: ' + boxHeight + 'px; position: relative; resize: vertical; overflow: hidden; padding-bottom:' + paddingBottom + 'px;';
+            'height: ' + boxHeight + 'px; position: relative; resize: vertical; overflow: hidden;';
     }
 
     var padding = +computedStyle.paddingLeft.slice(0, -2) + +computedStyle.paddingRight.slice(0, -2);
@@ -34,7 +34,7 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
 
     setStyle('.entry-content pre', [['position', 'absolute'],
                                     ['maxHeight', 'none'],
-                                    ['height', 'calc(100% - ' + offsetTop + 'px)'],
+                                    ['height', 'calc(100% - ' + offsetTop + 'px - ' + paddingBottom + 'px)'],
                                     ['paddingRight', '0'],
                                     ['width', (codeBoxes[0].offsetWidth - padding - border - 5) + 'px']]);
 }
