@@ -1,38 +1,45 @@
+var borderWidth = 2;
+var borderColor = '#acf';
+var borderRadius = 5;
+var backgroundColor = '#f8f8f8';
+var maxHeight = 500;
+var paddingTop = 12, paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
+
 var codeBoxes = document.getElementsByClassName('codebox');
 
 setStyle('.entry-content .quotebox, .entry-content .codebox', [['border-color', ''], ['background', '']]);
-setStyle('.entry-content .codebox', [['border', '2px solid #acf'],
-                                     ['border-radius', '5px'],
-                                     ['background', '#f8f8f8'],
-                                     ['padding', '12px 5px 5px 15px'],
+setStyle('.entry-content .codebox', [['border', borderWidth + 'px solid ' + borderColor],
+                                     ['border-radius', borderRadius + 'px'],
+                                     ['background', backgroundColor],
+                                     ['padding', paddingTop + 'px ' + paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px'],
                                      ['position', 'relative'],
                                      ['resize', 'vertical'],
                                      ['overflow', 'hidden']]);
 
 for (i = 0; i < codeBoxes.length; i++) {
-    var box = codeBoxes[i], gotOffset;
+    var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
 
     var boxPos = box.getBoundingClientRect();
-    if ((!gotOffset) && (gotOffset = true)) {
+    if (!i) {
         var prePos = pre.getBoundingClientRect();
         var offsetTop = prePos.top - boxPos.top;
     }
     var codePos = codeText.getBoundingClientRect();
 
     var codeTextHeight = codeText.offsetHeight;
-    var boxHeight = codePos.top - boxPos.top + codeTextHeight + 8;
-    (boxHeight > 500) && (boxHeight = 500);
+    var boxHeight = codePos.top - boxPos.top + codeTextHeight + 8;  // 8 — небольшой запас
+    (boxHeight > maxHeight) && (boxHeight = maxHeight);
     box.style.height = boxHeight + 'px';
 }
 
 setStyle('.entry-content pre', [['position', 'absolute'],
                                 ['maxHeight', 'none'],
                                 ['top', offsetTop + 'px'],
-                                ['bottom', '5px'],
+                                ['bottom', paddingBottom + 'px'],
                                 ['paddingRight', '0'],
-                                ['width', (codeBoxes[0].offsetWidth - 20 - 4) + 'px']]);
+                                ['width', (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px']]);
 
 function setStyle(selector, rulesArray)  {
     var sheet = document.styleSheets[0];
