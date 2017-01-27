@@ -32,6 +32,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var boxHeight = codePos.top - boxPos.top + codeTextHeight + 8;  // 8 — небольшой запас
     (boxHeight > maxHeight) && (boxHeight = maxHeight);
     box.style.height = boxHeight + 'px';
+    codeText.style.overflow = 'auto';
 }
 
 setStyle('.entry-content pre', [['position', 'absolute'],
