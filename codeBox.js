@@ -1,9 +1,13 @@
 var codeBoxes = document.getElementsByClassName('codebox');
 
 setStyle('.entry-content .quotebox, .entry-content .codebox', [['border-color', ''], ['background', '']]);
-setStyle('.entry-content .codebox', [['border', '2px solid #acf'], ['border-radius', '5px'],
-                                     ['background', '#f8f8f8'], ['padding', '12px 5px 5px 15px'],
-                                     ['position', 'relative'], ['resize', 'vertical'], ['overflow', 'hidden']]);
+setStyle('.entry-content .codebox', [['border', '2px solid #acf'],
+                                     ['border-radius', '5px'],
+                                     ['background', '#f8f8f8'],
+                                     ['padding', '12px 5px 5px 15px'],
+                                     ['position', 'relative'],
+                                     ['resize', 'vertical'],
+                                     ['overflow', 'hidden']]);
 
 if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
     for (i = 0; i < codeBoxes.length; i++) {
@@ -21,7 +25,8 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
         var boxHeight = offsetTop + codeTextHeight + paddingBottom;
         (boxHeight > 500) && (boxHeight = 500);
 
-        box.style = 'height: ' + boxHeight + 'px;';
+        box.style = 'border: 2px solid #acf; border-radius: 5px; background: #f8f8f8; padding: 12px 5px 5px 15px;' +
+            'height: ' + boxHeight + 'px; position: relative; resize: vertical; overflow: hidden;';
     }
 
     var padding = +computedStyle.paddingLeft.slice(0, -2) + +computedStyle.paddingRight.slice(0, -2);
