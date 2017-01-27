@@ -1,8 +1,10 @@
 var codeBoxes = document.getElementsByClassName('codebox');
 
-if (navigator.userAgent.search(/Firefox|Chrome/i) == -1)
+if (navigator.userAgent.search(/Firefox|Chrome/i) == -1) {
+    setStyle('.entry-content .quotebox, .entry-content .codebox', [['border-color', ''], ['background', '']]);
     setStyle('.entry-content .codebox', [['border', '2px solid #acf'], ['border-radius', '5px'],
-                                         ['background-color', '#f8f8f8'], ['padding', '12px 5px 5px 15px']]);
+                                         ['background', '#f8f8f8'], ['padding', '12px 5px 5px 15px']]);
+}
 else {
     for (i = 0; i < codeBoxes.length; i++) {
         var gotValue, box = codeBoxes[i];
