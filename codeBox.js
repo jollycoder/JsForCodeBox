@@ -10,15 +10,15 @@ setStyle('.entry-content .codebox', [['border', '2px solid #acf'],
                                      ['overflow', 'hidden']]);
 
 for (i = 0; i < codeBoxes.length; i++) {
-    var gotValue, box = codeBoxes[i];
+    var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
-    if (!gotValue) {
-        var boxPos = box.getBoundingClientRect();
-        var prePos = pre.getBoundingClientRect();
-        var offsetTop = prePos.top - boxPos.top;
-        gotValue = true;
-    }
-    var codeTextHeight = pre.getElementsByTagName('code')[0].offsetHeight;
+    var codeText = pre.getElementsByTagName('code')[0];
+
+    var boxPos = box.getBoundingClientRect();
+    var codePos = codeText.getBoundingClientRect();
+    var offsetTop = codePos.top - boxPos.top;
+
+    var codeTextHeight = codeText.offsetHeight;
     var boxHeight = offsetTop + codeTextHeight + 5;
     (boxHeight > 500) && (boxHeight = 500);
     box.style.height = boxHeight + 'px';
