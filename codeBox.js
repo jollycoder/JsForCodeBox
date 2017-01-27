@@ -3,7 +3,7 @@ var borderColor = '#acf';
 var borderRadius = 5;
 var backgroundColor = '#f8f8f8';
 var maxHeight = 500;
-var paddingTop = 12, paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
+var paddingTop = 1, paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
 
 var codeBoxes = document.getElementsByClassName('codebox');
 
