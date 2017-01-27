@@ -3,6 +3,7 @@ var borderColor = '#acf';
 var borderRadius = 5;
 var backgroundColor = '#f8f8f8';
 var maxHeight = 500;
+var fontFamily = 'Droid Sans Mono';
 var paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
 
 var codeBoxes = document.getElementsByClassName('codebox');
@@ -20,7 +21,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
-    codeText.style.fontFamily = 'Droid Sans Mono';
+    codeText.style.fontFamily = fontFamily;
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
@@ -40,7 +41,7 @@ setStyle('.entry-content pre', [['position', 'absolute'],
                                 ['top', offsetTop + 'px'],
                                 ['bottom', paddingBottom + 'px'],
                                 ['paddingRight', '0'],
-                                ['font-family', 'Droid Sans Mono'],
+                                ['font-family', fontFamily],
                                 ['width', (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px']]);
 
 function setStyle(selector, rulesArray)  {
