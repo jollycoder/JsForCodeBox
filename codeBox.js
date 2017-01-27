@@ -23,7 +23,7 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
         var boxHeight = offsetTop + codeTextHeight + 5;
         (boxHeight > 500) && (boxHeight = 500);
 
-        box.style = 'height: ' + boxHeight + 'px;';
+        box.style = 'height: ' + boxHeight + 'px; position: relative;';
     }
 
     var padding = +computedStyle.paddingLeft.slice(0, -2) + +computedStyle.paddingRight.slice(0, -2);
