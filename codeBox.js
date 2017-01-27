@@ -30,7 +30,7 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
                                     ['top', offsetTop + 'px'],
                                     ['bottom', '5px'],
                                     ['paddingRight', '0'],
-                                    ['width', (codeBoxes[0].offsetWidth - 20 - 4 - 5) + 'px']]);
+                                    ['width', (codeBoxes[0].offsetWidth - 20 - 4) + 'px']]);
 }
 
 function setStyle(selector, rulesArray)  {
