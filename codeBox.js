@@ -13,20 +13,20 @@ for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
-
+    
     var boxPos = box.getBoundingClientRect();
+    var prePos = pre.getBoundingClientRect();
     var codePos = codeText.getBoundingClientRect();
-    var offsetTop = codePos.top - boxPos.top;
 
     var codeTextHeight = codeText.offsetHeight;
-    var boxHeight = offsetTop + codeTextHeight + 5;
+    var boxHeight = codePos.top - boxPos.top + codeTextHeight + 10;
     (boxHeight > 500) && (boxHeight = 500);
     box.style.height = boxHeight + 'px';
 }
 
 setStyle('.entry-content pre', [['position', 'absolute'],
     ['maxHeight', 'none'],
-    ['top', offsetTop + 'px'],
+    ['top', (prePos.top - boxPos.top) + 'px'],
     ['bottom', '5px'],
     ['paddingRight', '0'],
     ['width', (codeBoxes[0].offsetWidth - 20 - 4) + 'px']]);
