@@ -1,7 +1,7 @@
 var codeBoxes = document.getElementsByClassName('codebox');
 
 if (navigator.userAgent.search(/Firefox|Chrome/i) == -1)
-    setStyle('.entry-content .codebox', [['border', '2px solid red'], ['border-radius', '5px'],
+    setStyle('.entry-content .codebox', [['border', '2px solid #acf'], ['border-radius', '5px'],
                                          ['background', '#f8f8f8'], ['padding', '12px 5px 5px 15px']]);
 else {
     for (i = 0; i < codeBoxes.length; i++) {
@@ -16,8 +16,8 @@ else {
             gotValue = true;
         }
         var codeTextHeight = pre.getElementsByTagName('code')[0].offsetHeight;
-        var boxHeight = offsetTop + codeTextHeight + 10;
-        ((boxHeight - paddingBottom > 500) && (boxHeight = 500 + paddingBottom));
+        var boxHeight = offsetTop + codeTextHeight + paddingBottom;
+        (boxHeight > 500) && (boxHeight = 500);
 
         box.style = 'border: 2px solid #acf; border-radius: 5px; background: #f8f8f8; padding: 12px 5px 5px 15px;' +
             'height: ' + boxHeight + 'px; position: relative; resize: vertical; overflow: hidden;';
