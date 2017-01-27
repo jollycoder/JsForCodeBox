@@ -20,6 +20,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
+    codeText.style.fontFamily = 'Droid Sans Mono';
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
@@ -39,6 +40,7 @@ setStyle('.entry-content pre', [['position', 'absolute'],
                                 ['top', offsetTop + 'px'],
                                 ['bottom', paddingBottom + 'px'],
                                 ['paddingRight', '0'],
+                                ['font-family', 'Droid Sans Mono'],
                                 ['width', (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px']]);
 
 function setStyle(selector, rulesArray)  {
