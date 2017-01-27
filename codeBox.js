@@ -19,7 +19,6 @@ if (navigator.userAgent.search(/Firefox|Chrome/i) > -1) {
             var offsetTop = prePos.top - boxPos.top;
             var computedStyle = getStyle(codeBoxes[0]);
             var paddingBottom = +computedStyle.paddingBottom.slice(0, -2);
-            alert(paddingBottom);
             gotValue = true;
         }
         var codeTextHeight = pre.getElementsByTagName('code')[0].offsetHeight;
