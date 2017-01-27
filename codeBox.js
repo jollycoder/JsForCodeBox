@@ -10,26 +10,29 @@ setStyle('.entry-content .codebox', [['border', '2px solid #acf'],
                                      ['overflow', 'hidden']]);
 
 for (i = 0; i < codeBoxes.length; i++) {
-    var box = codeBoxes[i];
+    var box = codeBoxes[i], gotOffset;
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
-    
+
     var boxPos = box.getBoundingClientRect();
-    var prePos = pre.getBoundingClientRect();
+    if ((!gotOffset) && (gotOffset = true)) {
+        var prePos = pre.getBoundingClientRect();
+        var offsetTop = prePos.top - boxPos.top;
+    }
     var codePos = codeText.getBoundingClientRect();
 
     var codeTextHeight = codeText.offsetHeight;
-    var boxHeight = codePos.top - boxPos.top + codeTextHeight + 10;
+    var boxHeight = codePos.top - boxPos.top + codeTextHeight + 8;
     (boxHeight > 500) && (boxHeight = 500);
     box.style.height = boxHeight + 'px';
 }
 
 setStyle('.entry-content pre', [['position', 'absolute'],
-    ['maxHeight', 'none'],
-    ['top', (prePos.top - boxPos.top) + 'px'],
-    ['bottom', '5px'],
-    ['paddingRight', '0'],
-    ['width', (codeBoxes[0].offsetWidth - 20 - 4) + 'px']]);
+                                ['maxHeight', 'none'],
+                                ['top', offsetTop + 'px'],
+                                ['bottom', '5px'],
+                                ['paddingRight', '0'],
+                                ['width', (codeBoxes[0].offsetWidth - 20 - 4) + 'px']]);
 
 function setStyle(selector, rulesArray)  {
     var sheet = document.styleSheets[0];
