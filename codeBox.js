@@ -8,7 +8,6 @@ var paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
 var codeBoxes = document.getElementsByClassName('codebox');
 
 setStyle('.entry-content .quotebox, .entry-content .codebox', [['border-color', ''], ['background', '']]);
-setStyle('.codetitle, samp, code, pre', [['font-size', 'none']]);
 setStyle('.entry-content .codebox', [['border', borderWidth + 'px solid ' + borderColor],
                                      ['border-radius', borderRadius + 'px'],
                                      ['background', backgroundColor],
@@ -22,7 +21,6 @@ for (i = 0; i < codeBoxes.length; i++) {
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
     codeText.style.fontFamily = 'Droid Sans Mono';
-    codeText.style.fontSize = '12.5px !important';
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
