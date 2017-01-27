@@ -22,7 +22,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
     codeText.style.fontFamily = 'Droid Sans Mono';
-    codeText.style.fontSize = '12.5px';
+    codeText.style.fontSize = '12.5px !important';
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
