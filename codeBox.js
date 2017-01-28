@@ -38,6 +38,6 @@ for (i = 0; i < codeBoxes.length; i++) {
         'max-height: none; ' +
         'top: ' + offsetTop + 'px; ' +
         'bottom: ' + paddingBottom + 'px; ' +
-        'paddingRight: 0;');
-    pre.style.width = (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px';
+        'padding-right: 0;' +
+        'width: ' + (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px;');
 }
