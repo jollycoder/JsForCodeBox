@@ -50,5 +50,6 @@ for (i = 0; i < codeBoxes.length; i++) {
         'right: ' + paddingRight + 'px; ' +
         'bottom: ' + paddingBottom + 'px; ' +
         'left: ' + paddingLeft + 'px;' +
+        'padding-right: 0; ' +
         'overflow: auto;');
 }
