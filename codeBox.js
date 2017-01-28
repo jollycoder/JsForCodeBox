@@ -17,6 +17,7 @@ for (i = 0; i < codeBoxes.length; i++) {
         'padding: ' + '0 ' +  paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px; ' +
         'position: relative; ' +
         'resize: vertical; ' +
+        'min-height: 80px; ' +
         'overflow: hidden;');
 
     var header = box.getElementsByTagName('div')[0];
