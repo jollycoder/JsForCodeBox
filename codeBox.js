@@ -32,7 +32,9 @@ for (i = 0; i < codeBoxes.length; i++) {
 
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
-    codeText.setAttribute('style', 'font-size: 12.5px !important; font-family: ' + fontFamily + ';');
+    codeText.setAttribute('style',
+        'font-size: 12.5px !important; ' +
+        'font-family: ' + fontFamily + ';');
 
     var boxPos = box.getBoundingClientRect();
     var codePos = codeText.getBoundingClientRect();
