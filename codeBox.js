@@ -15,7 +15,7 @@ for (i = 0; i < codeBoxes.length; i++) {
         'border: ' + borderWidth + 'px solid ' + borderColor + '; ' +
         'border-radius: ' + borderRadius + 'px; ' +
         'background: ' +  backgroundColor + '; ' +
-        'padding-left: ' + '0 ' +  paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px; ' +
+        'padding: ' + '0 ' +  paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px; ' +
         'position: relative; ' +
         'resize: vertical; ' +
         'min-height: 80px; ' +
