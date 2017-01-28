@@ -21,7 +21,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
-    codeText.style.fontFamily = fontFamily;
+    codeText.className += ' myFont';
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
@@ -35,13 +35,12 @@ for (i = 0; i < codeBoxes.length; i++) {
     (boxHeight > maxHeight) && (boxHeight = maxHeight);
     box.style.height = boxHeight + 'px';
 }
-
+setStyle('.myFont', [['font-family', fontFamily]]);
 setStyle('.entry-content pre', [['position', 'absolute'],
                                 ['maxHeight', 'none'],
                                 ['top', offsetTop + 'px'],
                                 ['bottom', paddingBottom + 'px'],
                                 ['paddingRight', '0'],
-                                ['font-family', fontFamily],
                                 ['width', (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px']]);
 
 function setStyle(selector, rulesArray)  {
