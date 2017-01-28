@@ -38,7 +38,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var codePos = codeText.getBoundingClientRect();
 
     var codeTextHeight = codeText.offsetHeight;
-    var boxHeight = codePos.top - boxPos.top + codeTextHeight + 8;  // 8 — небольшой запас
+    var boxHeight = codePos.top - boxPos.top + codeTextHeight + 10;  // 10 — небольшой запас
     (boxHeight > maxHeight) && (boxHeight = maxHeight);
     box.style.height = boxHeight + 'px';
 
