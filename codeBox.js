@@ -21,7 +21,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
-    codeText.className += ' myFont';
+    (i == 0) && (codeText.classList.add('myFont'));
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
