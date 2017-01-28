@@ -35,7 +35,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     (boxHeight > maxHeight) && (boxHeight = maxHeight);
     box.style.height = boxHeight + 'px';
 }
-setStyle('.myFont', [['font-family', fontFamily + ' !important']]);
+setStyle('.myFont', [['fontFamily', fontFamily + ' !important']]);
 setStyle('.entry-content pre', [['position', 'absolute'],
                                 ['maxHeight', 'none'],
                                 ['top', offsetTop + 'px'],
