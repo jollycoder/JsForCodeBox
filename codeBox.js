@@ -18,6 +18,15 @@ for (i = 0; i < codeBoxes.length; i++) {
         'resize: vertical; ' +
         'overflow: hidden;');
 
+    var header = box.getElementsByTagName('div')[0];
+    header.setAttribute('style', 'border-bottom:2px #ed9 solid; ' + 
+        'line-height: 36px; ' +
+        'vertical-align: middle; ' +
+        'margin-left: -10px; ' +
+        'margin-top: -4px; ' +
+        'margin-bottom: 9px; ' +
+        'padding-left: 10px;');
+
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
     codeText.setAttribute('style', 'font-size: 12.5px !important; font-family:' + fontFamily + ';');
