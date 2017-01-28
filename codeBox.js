@@ -47,8 +47,7 @@ for (i = 0; i < codeBoxes.length; i++) {
         'position: absolute; ' +
         'max-height: none; ' +
         'top: ' + offsetTop + 'px; ' +
-        'bottom: ' + paddingBottom + 'px; ' +
         'right: ' + paddingRight + 'px; ' +
-        'padding-right: 0; ' +
+        'bottom: ' + paddingBottom + 'px; ' +
         'overflow: auto;');
 }
