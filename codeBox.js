@@ -27,7 +27,6 @@ for (i = 0; i < codeBoxes.length; i++) {
         'vertical-align: middle; ' +
         'margin-left: ' + (paddingRight - paddingLeft) + 'px; ' +
         'margin-top: -4px; ' +
-        'margin-bottom: 9px; ' +
         'padding-left: 10px;');
 
     var pre = box.getElementsByTagName('pre')[0];
