@@ -13,7 +13,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var pre = box.getElementsByTagName('pre')[0];
 
     var codeText = pre.getElementsByTagName('code')[0];
-    codeText.setAttribute('style', 'font-size: 12.5px; font-family:' + fontFamily + ';');
+    codeText.setAttribute('style', 'font-size: 12.5px !important; font-family:' + fontFamily + ';');
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
@@ -36,7 +36,7 @@ for (i = 0; i < codeBoxes.length; i++) {
         'overflow: hidden;');
 
     pre.setAttribute('style', 'position: absolute; ' +
-        'max-height: 2000px; ' +
+        'max-height: none; ' +
         'top: ' + offsetTop + 'px; ' +
         'bottom: ' + paddingBottom + 'px; ' +
         'paddingRight: 0;' +
