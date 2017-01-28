@@ -48,7 +48,7 @@ for (i = 0; i < codeBoxes.length; i++) {
         'max-height: none; ' +
         'top: ' + offsetTop + 'px; ' +
         'bottom: ' + paddingBottom + 'px; ' +
-        'right: ' + (-paddingRight) + 'px; ' +
+        'right: ' + paddingRight + 'px; ' +
         'padding-right: 0; ' +
         'overflow: auto;');
 }
