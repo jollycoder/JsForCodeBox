@@ -13,7 +13,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var pre = box.getElementsByTagName('pre')[0];
 
     var codeText = pre.getElementsByTagName('code')[0];
-    codeText.setAttribute('style', 'font-size: 12.5px !important; font-family:' + fontFamily + ';');
+    codeText.setAttribute('style', 'font-size: 12.5px; font-family:' + fontFamily + ';');
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
@@ -25,7 +25,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var codeTextHeight = codeText.offsetHeight;
     var boxHeight = codePos.top - boxPos.top + codeTextHeight + 8;  // 8 — небольшой запас
     (boxHeight > maxHeight) && (boxHeight = maxHeight);
-    
+
     box.setAttribute('style', 'border: ' + borderWidth + 'px solid ' + borderColor + '; ' +
         'border-radius: ' + borderRadius + 'px; ' +
         'background: ' +  backgroundColor + '; ' +
@@ -34,22 +34,11 @@ for (i = 0; i < codeBoxes.length; i++) {
         'position: relative; ' +
         'resize: vertical; ' +
         'overflow: hidden;');
-}
 
-setStyle('.entry-content pre', [['position', 'absolute'],
-                                ['maxHeight', 'none'],
-                                ['top', offsetTop + 'px'],
-                                ['bottom', paddingBottom + 'px'],
-                                ['paddingRight', '0'],
-                                ['width', (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px']]);
-
-function setStyle(selector, rulesArray)  {
-    var sheet = document.styleSheets[0];
-    var rules = (sheet.cssRules || sheet.rules);
-
-    for (var i in rules)  {
-        if (rules[i].selectorText == selector)
-            for (var j = 0; j < rulesArray.length; j++)
-                rules[i].style[rulesArray[j][0]] = rulesArray[j][1];
-    }
+    pre.setAttribute('style', 'position: absolute; ' +
+        'max-height: 2000px; ' +
+        'top: ' + offsetTop + 'px; ' +
+        'bottom: ' + paddingBottom + 'px; ' +
+        'paddingRight: 0;' +
+        'width: ' + (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px;');
 }
