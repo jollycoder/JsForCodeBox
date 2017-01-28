@@ -21,7 +21,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
     var pre = box.getElementsByTagName('pre')[0];
     var codeText = pre.getElementsByTagName('code')[0];
-    (i == 0) && (codeText.classList.add('myFont'));
+    codeText.setAttribute('style', 'font-size: 12.5px !important; font-family:' + fontFamily + ';');
 
     var boxPos = box.getBoundingClientRect();
     if (!i) {
@@ -35,7 +35,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     (boxHeight > maxHeight) && (boxHeight = maxHeight);
     box.style.height = boxHeight + 'px';
 }
-setStyle('.myFont', [['fontFamily', fontFamily + ' !important']]);
+
 setStyle('.entry-content pre', [['position', 'absolute'],
                                 ['maxHeight', 'none'],
                                 ['top', offsetTop + 'px'],
