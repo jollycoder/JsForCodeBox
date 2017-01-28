@@ -10,6 +10,14 @@ var codeBoxes = document.getElementsByClassName('codebox');
 
 for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
+    box.setAttribute('style', 'border: ' + borderWidth + 'px solid ' + borderColor + '; ' +
+        'border-radius: ' + borderRadius + 'px; ' +
+        'background: ' +  backgroundColor + '; ' +
+        'padding: ' + '0 ' +  paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px; ' +
+        'position: relative; ' +
+        'resize: vertical; ' +
+        'overflow: hidden;');
+
     var pre = box.getElementsByTagName('pre')[0];
 
     var codeText = pre.getElementsByTagName('code')[0];
@@ -25,15 +33,7 @@ for (i = 0; i < codeBoxes.length; i++) {
     var codeTextHeight = codeText.offsetHeight;
     var boxHeight = codePos.top - boxPos.top + codeTextHeight + 8;  // 8 — небольшой запас
     (boxHeight > maxHeight) && (boxHeight = maxHeight);
-
-    box.setAttribute('style', 'border: ' + borderWidth + 'px solid ' + borderColor + '; ' +
-        'border-radius: ' + borderRadius + 'px; ' +
-        'background: ' +  backgroundColor + '; ' +
-        'padding: ' + '0 ' +  paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px; ' +
-        'height: ' + boxHeight + 'px; ' +
-        'position: relative; ' +
-        'resize: vertical; ' +
-        'overflow: hidden;');
+    box.style.height = boxHeight + 'px';
 
     pre.setAttribute('style', 'position: absolute; ' +
         'max-height: none; ' +
