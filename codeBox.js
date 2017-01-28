@@ -49,5 +49,6 @@ for (i = 0; i < codeBoxes.length; i++) {
         'top: ' + offsetTop + 'px; ' +
         'right: ' + paddingRight + 'px; ' +
         'bottom: ' + paddingBottom + 'px; ' +
+        'left: ' + paddingLeft + 'px;' +
         'overflow: auto;');
 }
