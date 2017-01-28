@@ -19,7 +19,6 @@ for (i = 0; i < codeBoxes.length; i++) {
         'overflow: hidden;');
 
     var pre = box.getElementsByTagName('pre')[0];
-
     var codeText = pre.getElementsByTagName('code')[0];
     codeText.setAttribute('style', 'font-size: 12.5px !important; font-family:' + fontFamily + ';');
 
@@ -39,6 +38,6 @@ for (i = 0; i < codeBoxes.length; i++) {
         'max-height: none; ' +
         'top: ' + offsetTop + 'px; ' +
         'bottom: ' + paddingBottom + 'px; ' +
-        'paddingRight: 0;' +
-        'width: ' + (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px;');
+        'paddingRight: 0;');
+    pre.style.width = (codeBoxes[0].offsetWidth - paddingRight - paddingLeft - borderWidth * 2) + 'px';
 }
