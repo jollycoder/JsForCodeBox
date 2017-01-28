@@ -8,18 +8,18 @@ var paddingRight = 5, paddingBottom = 5, paddingLeft = 15;
 
 var codeBoxes = document.getElementsByClassName('codebox');
 
-setStyle('.entry-content .quotebox, .entry-content .codebox', [['border-color', ''], ['background', '']]);
-setStyle('.entry-content .codebox', [['border', borderWidth + 'px solid ' + borderColor],
-                                     ['border-radius', borderRadius + 'px'],
-                                     ['background', backgroundColor],
-                                     ['padding', '0 ' + paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px'],
-                                     ['position', 'relative'],
-                                     ['resize', 'vertical'],
-                                     ['overflow', 'hidden']]);
-
 for (i = 0; i < codeBoxes.length; i++) {
     var box = codeBoxes[i];
+    box.setAttribute('style', 'border: ' + borderWidth + 'px solid ' + borderColor + '; ' +
+                              'border-radius: ' + borderRadius + 'px; ' +
+                              'background: ' +  backgroundColor + '; ' +
+                              'padding: ' + '0 ' +  paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px; ' +
+                              'position: relative; ' +
+                              'resize: vertical; ' +
+                              'overflow: hidden;');
+
     var pre = box.getElementsByTagName('pre')[0];
+
     var codeText = pre.getElementsByTagName('code')[0];
     codeText.setAttribute('style', 'font-size: 12.5px !important; font-family:' + fontFamily + ';');
 
