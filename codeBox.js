@@ -17,7 +17,7 @@ for (i = 0; i < codeBoxes.length; i++) {
         'padding: ' + '0 ' +  paddingRight + 'px ' + paddingBottom + 'px ' + paddingLeft + 'px; ' +
         'position: relative; ' +
         'resize: vertical; ' +
-        'min-height: 100px; ' +
+        'min-height: 80px; ' +
         'overflow: hidden;');
 
     var header = box.getElementsByTagName('div')[0];
@@ -48,7 +48,7 @@ for (i = 0; i < codeBoxes.length; i++) {
         'max-height: none; ' +
         'top: ' + offsetTop + 'px; ' +
         'bottom: ' + paddingBottom + 'px; ' +
-        'padding-right: 0;' +
+        'padding-right: 0; ' +
         'overflow: auto; ' +
         'width: 791px;');
 }
