@@ -19,10 +19,10 @@ for (i = 0; i < codeBoxes.length; i++) {
         'overflow: hidden;');
 
     var header = box.getElementsByTagName('div')[0];
-    header.setAttribute('style', 'border-bottom:2px #ed9 solid; ' + 
+    header.setAttribute('style', 'border-bottom: 2px #ed9 solid; ' + 
         'line-height: 36px; ' +
         'vertical-align: middle; ' +
-        'margin-left: -10px; ' +
+        'margin-left: ' + (paddingRight - paddingLeft) + 'px; ' +
         'margin-top: -4px; ' +
         'margin-bottom: 9px; ' +
         'padding-left: 10px;');
