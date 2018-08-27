@@ -1,6 +1,7 @@
 (function () {
     var isMobile = IsMobileDevice(),
         ahkHref = 'http://forum.script-coding.com/viewforum.php?id=13';
+    
     configPage();
     configNavBar();
     configCodeBox();
